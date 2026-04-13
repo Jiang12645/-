@@ -1,0 +1,42 @@
+print(" 1.\t 添加联系人\n "
+      "2.\t 删除联系人\n "
+      "3.\t 查找联系人\n "
+      "4.\t 修改电话号码\n "
+      "5.\t 显示所有联系人\n "
+      "0.\t 退出")
+a={}
+while True:
+    b = int(input())
+    if b==1:
+        print("添加联系人")
+        key=input("请输入要添加的姓名:")
+        val=input("请输入电话号码:")
+        a[key]=val
+        print(f"{key}联系人添加成功")
+    if b==2:
+        print("删除联系人")
+        c=input("请输入要删除的联系人：")
+        if c in a:
+            shan=a.pop(c)
+            print(f"{c}联系人删除成功")
+        else:
+            print("你输入的联系人不存在")
+    if b==3:
+        cha=input("请输入要查找的联系人:")
+        if cha in a:
+            print(f"{cha}:{a[cha]}")
+        else:
+            print(f"查找不到{cha}")
+    if b==4:
+        xiu=input("请输入要修改的电话号码主人的姓名:")
+        if xiu in a:
+            a[xiu]=input("请输入要修改的电话号码：")
+            print("修改成功")
+        else:
+            print(f"{xiu}未添加")
+    if b==5:
+        print("显示所有人")
+        print(a)
+    if b==0:
+        print("成功退出")
+        break
