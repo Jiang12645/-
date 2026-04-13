@@ -1,0 +1,27 @@
+students = [
+    {'name': '张三', 'score': 85},
+    {'name': '李四', 'score': 92},
+    {'name': '王五', 'score': 58},
+    {'name': '赵六', 'score': 76},
+    {'name': '小明', 'score': 45}
+]
+name=0
+gao=-1
+di=101
+ming=""
+ming1=""
+not1=[]
+for i in students:
+    name += i['score']
+    if i['score'] > gao:
+        gao = i['score']
+        ming = i['name']
+    if i['score'] < di:
+        di = i['score']
+        ming1 = i['name']
+    if i['score'] < 60:
+        not1.append(i['name'])
+print(f"评均分：{name / len(students)}")
+print(f"最低分学生姓名{ming1}:分数{di}")
+print(f"最高分学生姓名{ming}:分数{gao}")
+print(not1)
